@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  height: calc(100vh - 4.375rem);
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: #f005b5;
+  color: #fff;
+
+  &__points {
+    width: 15rem;
+  }
+  
+  &__drink-name {
+    width: 15rem;
+  }
+
+  &__strike-zone {
+    width: 15rem;
+    height: 4.375rem;
+    vertical-align: middle;
+  }
+
+  &__strike-img {
+    width: 4.375rem;
+    height: 4.375rem;
+    opacity: 0;
+
+    &--on {
+      opacity: 100;
+    }
+  }
+}
+
+.game {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.drink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+
+  &__shaker {
+    width: auto; 
+    height: 70%;
+    // transform: rotate(20deg);
+
+    animation: rotateAnimation 3s linear infinite;
+  }
+}
+
+.options {
+  display: flex;
+  width: 70%;
+  background-image: url("/assets/images/bar-counter.jpeg");
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    list-style-type: none;
+    margin: 1rem 0 1rem 1rem;
+    padding: 0;
+  }
+
+  &__item {
+    width: 20%;
+    height: 28%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+
+    &--success {
+      background-color: green;
+      color: white;
+      pointer-events: none;
+    }
+
+    &--fail {
+      background-color: red;
+      color: white;
+      pointer-events: none;
+    }
+  }
+}
+
+.message {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  background-image: url();
+}
